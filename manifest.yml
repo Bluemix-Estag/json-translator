@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: json-translater
+  host: json-translater
+  disk_quota: 1024M
+  services:
+  - json-translater-cloudantNoSQLDB

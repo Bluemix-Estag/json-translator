@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pacific-vault-163215",
+  "private_key_id": "a5e39ee717fd52644a2d39240f714213828f583e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEwAIBADANBgkqhkiG9w0BAQEFAASCBKowggSmAgEAAoIBAQDVmQVowA2SwYoQ\nFSon90iktTVihmAavl/g8/y1scsCje7Ajw+buFt29QJFKP585KMxtAneVrWnELgm\nTOIBZTKLfSEFql5TTVFE1oNBMmgKQZzhT5WQzYv++6mwe1eZRTkKlwq11jhuK6Zv\nxOx4vX4YI3bI7Xnh6ZCMQaxv1jgF7EEdQCheTePLF4NiWl3uqbGMQ7ZBUh0kgxfB\nh2iPmy/JvNo2H0J8BGysur9v/XYq2VxnvYQ76n5I5o4pfprQPnKMps5v+TwMkLOR\nmvTfdJv9I11sRmdlp0aFe35RrgYAqvxp3U+5k6x0cC7rc/c94xuAimyena6UMGWO\nbgoZEEAfAgMBAAECggEBAKUeA4Z0YInAP2ArXElE6c0Zn8koI4bJAAk/020Joeu5\nmIUWknRIUbxlrnmUNRaLEHTNvos38HjTfedtq5B0kFwwQKTGjOBMdrSGNzThKHg1\nPHcYNICZxM058nVRA+iiEHRVSpxCm6De8WyZiEvWAHHciGjO21d+XJVv90MFEI3S\nKKGVRvO0hndmwfUnC5ZBDxmon+Aj0iQNql6ffnuoZ9WN61IOCDRsY6dEqXC5LMhz\nFj6jhiC7G50gyaHNGc0acoPQUbaUfHjRwMnPR3vMMABwaZ8+2JjPrw1LjCT3NbH6\nlCdHXQ4mK+sw5kHnKt7bRRpvnPi7KCnA1SUTSSY4whECgYEA9M6UvAXwzbOEbvuu\nMcUklx3lACdKxAUbmo4BW0oSLpq8eCauhZCNRKpVIP/SItK8V9XbgJLW7HKviJpa\ngQO9k1xMZPiFeFh97U3CIil5n2bEgq8aXcGXUAhwokf+Iempfs9heOlwiQ6mGFqY\nIYnxfChupCuiy5nR/JOe5u9+Sv0CgYEA310kZEPueR+Ab99n+3bHTVUYhBzRzdmP\nsxDZmBrNO+5dEAIdE9xvPiTG0RLDwoEN4BFSuYzqEmgV8LeaPoN8IkrtoZyxSSD/\nK6Hif4/PnKVoDP+wScGch9SuKIJB2fUbty3dZHvvtR8+eU82OH2nFFCTZyUcdHO6\nonltbfX36EsCgYEAnkEFSV8VwgQwsoYkn6vv8Xiz1xuPa5RZudne6qLBijshZxKq\nc1F04VSzX3fA4h4U/zsSgNVr9sJU0xvlMc23OZHLGOLHdXrPPR6tRuRE6VTH6CtG\nAiHprSUnmuCrWkTw+zcYrc9Knm9H1CqMefHwl/CTRbGntbKkWoEbkfJ0VAkCgYEA\nyOkZ48oqxe4s8/PqrwjPCmNBkwvtN5C7LeE5KBTriD3GnbCZARVlRmuEHekYBmtY\n1LQgSeBTZ00Sdxxe9F4GmT32c0jjOpkgjNmnRwBPSWKKri6LHjy1lIQcRzmrC+bq\nECGEI29LVQqOgkVaywNS9vXnMH70EldKh/xbDu6RF/MCgYEA5xasQKyulob7/mv1\ncm/39L4xLHMBZ4HWbTQocKACzmVCyLmcadeGOhlF4V4dCY5kCHx6MAqGKOX/fDBJ\nPbDKQ4XJrQeS1Pyr32R2hhKoUUnwzFboydFNqQhR9Ruc5f/5/tGPrKvc9AdAyzEx\nOwzLy0zDkXWNSYcrZ96UG76IoRw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "json-translate-rzeined@pacific-vault-163215.iam.gserviceaccount.com",
+  "client_id": "109680060828029473305",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/json-translate-rzeined%40pacific-vault-163215.iam.gserviceaccount.com"
+}
