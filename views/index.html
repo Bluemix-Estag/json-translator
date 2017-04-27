@@ -2,24 +2,48 @@
 <html>
 
 <head>
-    <title>Conversation translator</title>
+    <title>JSON Translator</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+        }
+
+    </style>
 </head>
 
 <body>
-    <div class="header">Header</div>
-    <div class="main">
-        <div id="loading-img"></div>
-        <input type="file" id="file" />
-        <div id="translating"></div>
-        
-        <div id="download"></div>
+    <div class="header">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">JSON Translator</a>
+                </div>
+            </div>
+        </nav>
     </div>
-    <div class="footer">
-        footer
+    <div class="main">
+
+        <div id="loading-img"></div>
+        <div class="input" id="input-file">
+            <button class="input-btn btn btn-primary">Upload JSON</button>
+            <input type="file" id="file">
+        </div>
+        <div class="show">
+            <div id="translating"></div>
+            <div id="counter"></div>
+            <div id="download"></div>
+        </div>
+            </div>
+    </div>
+    <div class="page-footer">
+        <div>Cloud &copy;</div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/json_translator.js"></script>

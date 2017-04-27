@@ -14,7 +14,8 @@
     "express": "4.13.x",
     "google-translate-api": "^2.2.2",
     "method-override": "2.3.x",
-    "morgan": "1.6.x"
+    "morgan": "1.6.x",
+    "watson-developer-cloud": "^2.29.0"
   },
   "repository": {},
   "engines": {

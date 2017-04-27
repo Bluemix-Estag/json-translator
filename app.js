@@ -71,11 +71,7 @@ app.use('/style', express.static(path.join(__dirname, '/views/style')));
 var json;
 var keys;
 app.get('/', routes.index);
-app.post('/api/translate', function (request, response) {
-    //    var text = request.body.text;
-    console.log(request.body);
-    return true;
-});
+
 app.get('/api/translate/google', function (request, response) {
     var text = request.query.text;
     const translate = require('google-translate-api');

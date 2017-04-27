@@ -108,7 +108,7 @@ function iterateAndTranslate(json, translatedJSON, keys, i) {
     if (json[keys[i]] !== null && json[keys[i]].constructor === stringConstructor && typeof json[keys[i]] !== "object") {
         if (keys[i] != "updated" && keys[i] != "created" && keys[i] != "conditions" && json[keys[i]] != "" && keys[i] != "dialog_node" && keys[i] != "go_to" && keys[i] != "intent" && keys[i] != "selector") {
 //            console.log('translating: ' + json[keys[i]]);
-            showTranslatingMessage(json[keys[i]]);
+            showTranslatingMessage(json[keys[i]],cont);
             xhrGet('/api/translate?text=' + json[keys[i]], function (data) {
                 translatedJSON[keys[i]] = responseTreatmente(data.toLowerCase());
                 cont = cont + 1;
@@ -153,13 +153,16 @@ function finishedIt() {
     removeDuplicate(newJSON, Object.keys(newJSON), 0, 0);
     stopLoadingMessage();
     showFinishedMsg();
+    document.getElementById('input-file').innerHTML = "<a href='/'>Translate a new file</a>";
+//    document.getElementById('input-file').style.textDecoration = 'none';
 }
 $("#file").change(function (event) {
     var uploadedFile = event.target.files[0];
-    if (uploadedFile.type !== "application/json") {
-        alert("Wrong file type == " + uploadedFile.type);
-        return false;
-    }
+
+//    if (uploadedFile.type !== "application/json") {
+//        alert("Wrong file type == " + uploadedFile.type);
+//        return false;
+//    }
     if (uploadedFile) {
         var readFile = new FileReader();
         readFile.onload = function (e) {
@@ -190,8 +193,14 @@ function stopLoadingMessage(){
     document.getElementById('loading-img').innerHTML = '';
 }
 
-function showTranslatingMessage(msg){
+function showTranslatingMessage(msg,cont){
     document.getElementById('translating').innerHTML = 'Translating : '+msg+' ...';
+    document.getElementById('translating').style.color = 'white';
+    document.getElementById('counter').innerHTML = 'Words translated : <span class=badge>'+cont+'</span>';
+    document.getElementById('counter').style.color = 'white';
+    if(finishedIt){
+        
+    }
 }
 
 function showFinishedMsg(){
@@ -201,7 +210,7 @@ function showFinishedMsg(){
             document.getElementById('translating').innerHTML = 'You json will be ready in '+i+'s';
             }  else{
                 document.getElementById('translating').innerHTML = '';
-                document.getElementById('download').innerHTML = '<a id="downloadAnchorElem" onclick="downloadJSON();" href="#">Download JSON</a>';
+                document.getElementById('download').innerHTML = '<button id="downloadAnchorElem" class="btn btn-danger" onclick="downloadJSON();" href="#">Download JSON</button>';
             }
         },1000);
     }
