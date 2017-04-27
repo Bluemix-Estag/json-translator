@@ -46,7 +46,7 @@ function removeDuplicate(json, keys, i) {
             //            console.log(howmany);
             if (howmany != null) {
                 json[keys[i]].splice(each, howmany.length - 1);
-                if(howmany[0] == "sim") console.log(howmany);
+                if(howmany[0] == "sim") console.log('sim '+howmany);
             }
             if (json[keys[i]][each] !== undefined && json[keys[i]][each].constructor === jsonConstructor) {
                 removeDuplicate(json[keys[i]][each], Object.keys(json[keys[i]][each]), 0);
@@ -72,6 +72,8 @@ function translateIt(json) {
     //    showObjectKeys(keysToTranslate,Object.keys(keysToTranslate),0);
     translate_length = getKeysLength(originalJSON, keys, 0);
     console.log('Object has ' + translate_length + ' keys that contains value');
+    
+    showLoadingMessage();
     iterateAndTranslate(originalJSON, newJSON, keys, 0);
     //    removeDuplicate(originalJSON,Object.keys(originalJSON),0);
 }
@@ -98,14 +100,15 @@ function getKeysLength(json, keys, i) {
 
 function iterateAndTranslate(json, translatedJSON, keys, i) {
     console.log('cont: ' + cont + ' legnth: ' + translate_length);
-    if (cont >= translate_length && keys[i] === undefined) {
+    if (cont > translate_length && keys[i] === undefined) {
         finishedIt();
         return 0;
     }
     if (i == keys.length) return 0;
     if (json[keys[i]] !== null && json[keys[i]].constructor === stringConstructor && typeof json[keys[i]] !== "object") {
         if (keys[i] != "updated" && keys[i] != "created" && keys[i] != "conditions" && json[keys[i]] != "" && keys[i] != "dialog_node" && keys[i] != "go_to" && keys[i] != "intent" && keys[i] != "selector") {
-            console.log('translating: ' + json[keys[i]]);
+//            console.log('translating: ' + json[keys[i]]);
+            showTranslatingMessage(json[keys[i]]);
             xhrGet('/api/translate?text=' + json[keys[i]], function (data) {
                 translatedJSON[keys[i]] = responseTreatmente(data.toLowerCase());
                 cont = cont + 1;
@@ -114,7 +117,7 @@ function iterateAndTranslate(json, translatedJSON, keys, i) {
                 }
                 else return iterateAndTranslate(json, translatedJSON, keys, i + 1);
             }, function (err) {
-                console.log(err);
+//                console.log(err);
             })
         }
         else {
@@ -148,7 +151,8 @@ function responseTreatmente(data){
 function finishedIt() {
     delete newJSON['finished'];
     removeDuplicate(newJSON, Object.keys(newJSON), 0, 0);
-    alert('acabou');
+    stopLoadingMessage();
+    showFinishedMsg();
 }
 $("#file").change(function (event) {
     var uploadedFile = event.target.files[0];
@@ -176,4 +180,30 @@ function downloadJSON() {
     dlAnchorElem.setAttribute("href", dataStr);
     dlAnchorElem.setAttribute("download", "translatedJSON.json");
     dlAnchorElem.click();
+}
+
+
+function showLoadingMessage(){
+    document.getElementById('loading-img').innerHTML = '<img src="images/watson.gif" alt="No image"/>';
+}
+function stopLoadingMessage(){
+    document.getElementById('loading-img').innerHTML = '';
+}
+
+function showTranslatingMessage(msg){
+    document.getElementById('translating').innerHTML = 'Translating : '+msg+' ...';
+}
+
+function showFinishedMsg(){
+    for(var i = 10; i > 0 ; i--){
+        setTimeout(function(){
+            if(i!= 0){
+            document.getElementById('translating').innerHTML = 'You json will be ready in '+i+'s';
+            }  else{
+                document.getElementById('translating').innerHTML = '';
+                document.getElementById('download').innerHTML = '<a id="downloadAnchorElem" onclick="downloadJSON();" href="#">Download JSON</a>';
+            }
+        },1000);
+    }
+    
 }

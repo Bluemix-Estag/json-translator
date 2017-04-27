@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Favorites Organizer powered by Cloudant</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<link rel="stylesheet" href="/style/style.css" />
+    <title>Conversation translator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="style/style.css" />
 </head>
+
 <body>
-    <div id="div_keys"></div>
-    <input type="file" id="file" />
-    <a id="downloadAnchorElem" onclick="downloadJSON();" href="#" >Download JSON</a>
+    <div class="header">Header</div>
+    <div class="main">
+        <div id="loading-img"></div>
+        <input type="file" id="file" />
+        <div id="translating"></div>
+        
+        <div id="download"></div>
+    </div>
+    <div class="footer">
+        footer
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/json_translator.js"></script>
     <script type="text/javascript" src="scripts/util.js"></script>
 </body>
+
 </html>
